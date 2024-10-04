@@ -77,8 +77,16 @@ class MyService(dbus.service.Object):
 	def EchoSendTopLevelMenus(self, top_level_menus):
 		self.SendTopLevelMenus(top_level_menus)
 
+	@dbus.service.method(BUS_NAME, in_signature='as')
+	def EchoSendTopLevelOptions(self, top_level_options):
+		self.SendTopLevelOptions(top_level_options)
+
 	@dbus.service.signal(BUS_NAME, signature='as')
 	def SendTopLevelMenus(self, top_level_menus):
+		pass
+
+	@dbus.service.signal(BUS_NAME, signature='as')
+	def SendTopLevelOptions(self, top_level_options):
 		pass
 
 	@dbus.service.method(BUS_NAME, in_signature='b')
