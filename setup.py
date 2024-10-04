@@ -1,9 +1,29 @@
 import setuptools
+import os
+import sys
 
 import fildem
 
 with open('README.md', 'r') as fh:
 	long_description = fh.read()
+
+
+
+def fildemStartup():
+	return input("Would you like to run fildem on startup? [Y/N]: ")
+
+def __Main__():
+	if (sys.argv[1] == "install"):
+		response = fildemStartup().lower()
+		if (response == "y" or response == "yes"):
+			os.system("mv ./fildemstartup/* ~/.config/autostart/")
+		elif (response == "n" or response == "no"):
+			print("")
+		else:
+			#Ask the question again
+			__Main__()
+
+__Main__()
 
 setuptools.setup(
 	name='fildem',
