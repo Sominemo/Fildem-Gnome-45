@@ -2,7 +2,7 @@
 	<schema id="org.gnome.shell.extensions.fildem-global-menu" path="/org/gnome/shell/extensions/fildem-global-menu/">
 		<key type="i" name="min-padding">
 			<range min="0" max="50"/>
-			<default>6</default>
+			<default>7</default>
 			<summary>Button paddings (tweak this if the menu and items desynchronize)</summary>
 		</key>
 		<key type="b" name="show-only-when-hover">
